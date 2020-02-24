@@ -1,2 +1,2 @@
-# Kayne_the_Wrapper
+# Kanye_the_Wrapper
 A wrapper for the Kanye West Random Qoute Generator 
