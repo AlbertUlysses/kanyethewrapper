@@ -6,9 +6,9 @@ Thank You [Andrew!] (https://github.com/ajzbc)
 
 # Version
 1.0 Initial release - Kanye as a service, continued
-
+1.1 refactor code to remove dependencies outside of the Python standard library.
 # Dependencies
-[Requests](https://requests.readthedocs.io/en/master/)
+None
 
 # Usage
 
