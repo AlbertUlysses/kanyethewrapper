@@ -1,12 +1,14 @@
 # Kanye the Python Wrapper
 This is a wrapper for kanye.rest - a Free REST API for random Kanye West quotes by Andrew Jazbec.
-Thank You [Andrew!] (https://github.com/ajzbc)
+Thank You [Andrew!](https://github.com/ajzbc)
 
 * Wraps GET requests found here -> [https://kanye.rest/](https://kanye.rest/)
 
 # Version
 1.0 Initial release - Kanye as a service, continued
+
 1.1 refactor code to remove dependencies outside of the Python standard library.
+
 # Dependencies
 None
 
