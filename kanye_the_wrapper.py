@@ -18,3 +18,9 @@ class Kanye():
         return str_quote 
 
 
+    def heard_em_say(self, diction=None) -> dict:
+        """Returns a dictionary of saved qoutes."""
+        if diction:
+            return "Filler text"
+        else:
+            return "I can't tell you nothin'"
