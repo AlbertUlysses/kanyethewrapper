@@ -6,6 +6,10 @@ import json
 
 class Kanye():
 
+    def __init__(self):
+        self.saved_quotes = {}
+
+
     def west(self) -> str:
         """Returns a Kanye West quote."""
         location = 'https://api.kanye.rest'
