@@ -9,6 +9,8 @@ Thank You [Andrew!](https://github.com/ajzbc)
 
 1.1 refactor code to remove dependencies outside of the Python standard library.
 
+1.2  Now has a built in feature that saves quotes.
+
 # Dependencies
 None
 
@@ -21,15 +23,23 @@ Below is an example of running the wrapper in the Python interpreter:
 
 ```
 >>> from kanye_the_wrapper import Kanye
->>> random = Kanye()
->>> print(random.west())
+>>> example = Kanye()
+>>> print(example.west())
 I want the world to be better! All I want is positive! All I want is dopeness!
 >>> 
 ```
 
 The method returns type string.
 
+If you liked a quote and want to return to it, you can now use the `heard_em_say` method.
+
+The method keeps a list of the last 5 quotes and you can call this list by running: 
+`example.heard_em_say()`. 
+If you run this method before calling a random quote, you'll get a fun error message.
+
 ## Current TODO: 
 
-* add requirements.txt file
 
+* refactor `.heard_em_say()` and `.west` methods. 
+* The `heard_em_say()` will return a dictionary, 
+    the current method is not intuitive to work with.
