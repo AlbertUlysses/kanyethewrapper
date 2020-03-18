@@ -20,17 +20,18 @@ class Kanye():
         payload = json.loads(read_content.decode("utf-8"))
         convert_json = dict(payload)
         str_quote = str(convert_json['quote'])
-        if len(self.saved_quotes) < self.saved: 
-            self.saved_quotes.append(str_quote)  
-            self.quote_counter += 1
-        elif len(self.saved_quotes) == self.saved and \
-                self.quote_counter == self.saved:
-            self.quote_counter = 0
-            self.saved_quotes[self.quote_counter] = str_quote
-            self.quote_counter += 1
-        else:
-            self.saved_quotes[self.quote_counter] = str_quote
-            self.quote_counter += 1
+        if self.saved > 0:
+            if len(self.saved_quotes) < self.saved: 
+                self.saved_quotes.append(str_quote)  
+                self.quote_counter += 1
+            elif len(self.saved_quotes) == self.saved and \
+                    self.quote_counter == self.saved:
+                self.quote_counter = 0
+                self.saved_quotes[self.quote_counter] = str_quote
+                self.quote_counter += 1
+            else:
+                self.saved_quotes[self.quote_counter] = str_quote
+                self.quote_counter += 1
         return str_quote
 
     def heard_em_say(self) -> list:
