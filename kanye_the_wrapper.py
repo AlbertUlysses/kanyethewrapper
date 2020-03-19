@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/env python3 
 import urllib.request 
 import json
 
@@ -10,6 +9,14 @@ class Kanye():
         self.saved_quotes = [] 
         self.saved = saved
         self.quote_counter = 0
+        self.last_quote = None
+
+    def watch_the_throne(self):
+        """Saves the last quote."""
+        if self.last_quote:
+            self.saved_quotes.append(self.last_quote)
+            return 'Quote Saved'
+        raise Exception('No quotes to save, try to call the API first.')
 
     def west(self) -> str:
         """Returns a Kanye West quote."""
@@ -19,20 +26,8 @@ class Kanye():
         read_content = content.read()
         payload = json.loads(read_content.decode("utf-8"))
         convert_json = dict(payload)
-        str_quote = str(convert_json['quote'])
-        if self.saved > 0:
-            if len(self.saved_quotes) < self.saved: 
-                self.saved_quotes.append(str_quote)  
-                self.quote_counter += 1
-            elif len(self.saved_quotes) == self.saved and \
-                    self.quote_counter == self.saved:
-                self.quote_counter = 0
-                self.saved_quotes[self.quote_counter] = str_quote
-                self.quote_counter += 1
-            else:
-                self.saved_quotes[self.quote_counter] = str_quote
-                self.quote_counter += 1
-        return str_quote
+        self.last_quote = str(convert_json['quote'])
+        return self.last_quote
 
     def heard_em_say(self) -> list:
         """Returns a list of saved qoutes."""
