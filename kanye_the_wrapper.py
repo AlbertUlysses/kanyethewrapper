@@ -5,16 +5,19 @@ import json
 
 class Kanye():
 
-    def __init__(self, saved=5):
-        self.saved_quotes = [] 
-        self.saved = saved
+    def __init__(self):
+        self.saved_quotes = {} 
         self.quote_counter = 0
         self.last_quote = None
+        self.saved = 5
 
-    def watch_the_throne(self):
+    def watch_the_throne(self) -> str:
         """Saves the last quote."""
         if self.last_quote:
-            self.saved_quotes.append(self.last_quote)
+            if self.quote_counter >= self.saved:
+                self.quote_counter = 0
+            self.saved_quotes[self.quote_counter + 1] = self.last_quote
+            self.quote_counter += 1
             return 'Quote Saved'
         raise Exception('No quotes to save, try to call the API first.')
 
@@ -29,7 +32,7 @@ class Kanye():
         self.last_quote = str(convert_json['quote'])
         return self.last_quote
 
-    def heard_em_say(self) -> list:
+    def heard_em_say(self):
         """Returns a list of saved qoutes."""
         if self.saved_quotes:
             return self.saved_quotes 
