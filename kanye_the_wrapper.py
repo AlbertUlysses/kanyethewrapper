@@ -11,6 +11,15 @@ class Kanye():
         self.last_quote = None
         self.saved = 5
 
+    def bound_2(self, new_saved: int) -> str:
+        """Resets the dictionary size for quotes, drops the quotes that are over."""
+        if len(self.saved_quotes) > new_saved: 
+            old_dictionary = self.saved_quotes
+            self.saved_quotes = {key: value for key, 
+                    value in old_dictionary.items() for key in range(1, new_saved+1)}
+        self.saved = new_saved
+        return f'The dictionary can save {self.saved} quotes.' 
+
     def watch_the_throne(self) -> str:
         """Saves the last quote."""
         if self.last_quote:
