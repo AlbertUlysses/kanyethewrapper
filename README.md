@@ -11,6 +11,8 @@ Thank You [Andrew!](https://github.com/ajzbc)
 
 1.2  Now has a built in feature that saves quotes.
 
+1.2.1 The wrapper now uses a dictionary to save quotes. It has also has a new method to manage the dictionary size. 
+
 # Dependencies
 None
 
@@ -39,7 +41,4 @@ If you run this method before calling a random quote, you'll get a fun error mes
 
 ## Current TODO: 
 
-
-* refactor `.heard_em_say()` and `.west` methods. 
-* The `heard_em_say()` will return a dictionary, 
-    the current method is not intuitive to work with.
+* Nothing new in the works.
