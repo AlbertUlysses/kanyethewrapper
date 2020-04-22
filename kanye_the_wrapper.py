@@ -42,7 +42,7 @@ class Kanye():
         return self.last_quote
 
     def heard_em_say(self):
-        """Returns a list of saved qoutes."""
+        """Returns a dictionary of saved qoutes."""
         if self.saved_quotes:
             return self.saved_quotes 
         else:

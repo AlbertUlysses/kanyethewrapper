@@ -41,4 +41,4 @@ If you run this method before calling a random quote, you'll get a fun error mes
 
 ## Current TODO: 
 
-* Nothing new in the works.
+* Look into changing how to save to dictionary, use heapq.
