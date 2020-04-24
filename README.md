@@ -42,3 +42,4 @@ If you run this method before calling a random quote, you'll get a fun error mes
 ## Current TODO: 
 
 * Look into changing how to save to dictionary, use heapq.
+* Update Readme for function explanation
