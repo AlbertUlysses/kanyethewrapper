@@ -6,13 +6,7 @@ Thank You [Andrew!](https://github.com/ajzbc)
 * Wraps GET requests found here -> [https://kanye.rest/](https://kanye.rest/)
 
 # Version
-1.0 Initial release - Kanye as a service, continued
-
-1.1 refactor code to remove dependencies outside of the Python standard library.
-
-1.2  Now has a built in feature that saves quotes.
-
-1.2.1 The wrapper now uses a dictionary to save quotes. It has also has a new method to manage the dictionary size. 
+#TODO: look into versioning for PIP
 
 # Dependencies
 None

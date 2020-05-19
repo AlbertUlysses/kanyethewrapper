@@ -12,7 +12,8 @@ class Kanye():
         self.saved = 5
 
     def bound_2(self, new_saved: int) -> str:
-        """Resets the dictionary size for quotes, drops the quotes that are over."""
+        """Resets the dictionary size for quotes, 
+        drops the quotes that are over the new limit."""
         if len(self.saved_quotes) > new_saved: 
             old_dictionary = self.saved_quotes
             self.saved_quotes = {key: value for key, 
@@ -28,7 +29,7 @@ class Kanye():
             self.saved_quotes[self.quote_counter + 1] = self.last_quote
             self.quote_counter += 1
             return 'Quote Saved'
-        raise Exception('No quotes to save, try to call the API first.')
+        raise Exception('Try calling the API first.')
 
     def west(self) -> str:
         """Returns a Kanye West quote."""
@@ -41,9 +42,9 @@ class Kanye():
         self.last_quote = str(convert_json['quote'])
         return self.last_quote
 
+# TODO look into what king of raise to call 
     def heard_em_say(self):
-        """Returns a dictionary of saved qoutes."""
+        """Returns a dictionary of saved quotes."""
         if self.saved_quotes:
             return self.saved_quotes 
-        else:
-            return "I can't tell you nothin'"
+        raise KeyError('The dictionary is empty.')
