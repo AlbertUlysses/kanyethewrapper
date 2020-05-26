@@ -38,11 +38,11 @@ class Kanye():
         content = urllib.request.urlopen(req_call)
         read_content = content.read()
         payload = json.loads(read_content.decode("utf-8"))
-        convert_json = dict(payload)
-        self.last_quote = str(convert_json['quote'])
+        payload_dict = dict(payload)
+        self.last_quote = str(payload_dict['quote'])
         return self.last_quote
 
-# TODO look into what king of raise to call 
+# TODO look into what kind of raise to call 
     def heard_em_say(self):
         """Returns a dictionary of saved quotes."""
         if self.saved_quotes:
