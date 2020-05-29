@@ -1,5 +1,4 @@
 import pytest
-import kanye_the_wrapper
 
 
 def test_west():
@@ -12,4 +11,8 @@ def test_watch_the_throne():
     pass
 
 def test_heard_em_say():
-    pass
+    from kanye_the_wrapper.kanye_the_wrapper import Kanye
+    test_variable = Kanye()
+    with pytest.raises(KeyError) as exception_info:
+        test_variable.heard_em_say()
+    assert exception_info.match('The dictionary is empty.')
