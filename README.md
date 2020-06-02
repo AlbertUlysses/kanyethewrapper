@@ -6,7 +6,7 @@ Thank You [Andrew!](https://github.com/ajzbc)
 * Wraps GET requests found here -> [https://kanye.rest/](https://kanye.rest/)
 
 # Version
-# TODO: look into versioning for PIP
+TODO: look into versioning for PIP
 
 # Dependencies
 None
@@ -68,15 +68,23 @@ See below for an example.
 
 ```
 >>> example.heard_em_say()
-{1: 'My greatest pain in life is that I will never be able to see myself perform live.', 2: 'Style is genderless', 3: 'Only free thinkers', 4: "People always say that you can't please everybody. I think that's a cop-out. Why not attempt it? Cause think of all the people that you will please if you try.", 5: 'The world is our family', 6: "If I don't scream, if I don't say something then no one's going to say anything."}
+{1: "We all self-conscious. I'm just the first to admit it.", 
+2: 'I want the world to be better! All I want is positive! All I want is dopeness!', 
+3: "Today is the best day ever and tomorrow's going to be even better", 
+4: 'Only free thinkers', 
+5: "Truth is my goal. Controversy is my gym. I'll do a hundred reps of controversy for a 6 pack of truth"}
 >>> example.bound_2(3)
 'The dictionary can save 3 quotes.'
 >>> example.heard_em_say()
-{1: "If I don't scream, if I don't say something then no one's going to say anything.", 2: "If I don't scream, if I don't say something then no one's going to say anything.", 3: "If I don't scream, if I don't say something then no one's going to say anything."}
+{1: "We all self-conscious. I'm just the first to admit it.", 
+2: 'I want the world to be better! All I want is positive! All I want is dopeness!', 
+3: "Today is the best day ever and tomorrow's going to be even better"}
 >>> 
+
 ```
 
 ## Current TODO: 
 
 * Look into changing how to save to dictionary, use heapq.
 * Write unit tests.
+* heard_em_say is broken, it returns the same quote for a number of times.
