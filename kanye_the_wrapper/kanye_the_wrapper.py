@@ -42,7 +42,7 @@ class Kanye():
         self.last_quote = str(payload_dict['quote'])
         return self.last_quote
 
-    def heard_em_say(self):
+    def heard_em_say(self) -> dict:
         """Returns a dictionary of saved quotes."""
         if self.saved_quotes:
             return self.saved_quotes 
