@@ -16,7 +16,7 @@ None
 
 There is one class that you need to import, and one main method for the wrapper. The class is Kanye and the method is west(), below is an example of running the wrapper in the Python interpreter:
 ```
->>> from kanye_the_wrapper import Kanye
+>>> from kanyethewrapper import Kanye
 >>> example = Kanye()
 >>> print(example.west())
 I want the world to be better! All I want is positive! All I want is dopeness!
@@ -38,7 +38,7 @@ If you called the method without saving a quote first, then you'll receive an er
 Below is an example of this with the Python Interpreter. 
 
 ```
->>> from kanye_the_wrapper import Kanye
+>>> from kanyethewrapper import Kanye
 >>> example = Kanye()
 >>> example.west()
 'My greatest pain in life is that I will never be able to see myself perform live.'
