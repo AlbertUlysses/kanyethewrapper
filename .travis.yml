@@ -3,5 +3,8 @@ python:
     - "3.8"
 install:
     - pip install -e .
+    - pip install pytest-cov codecov
 script:
-    - pytest tests
+    - pytest --cov=kanyethewrapper tests
+after_success:
+    - codecov
