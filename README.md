@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.com/AlbertUlysses/kanyethewrapper.svg?branch=master)](https://travis-ci.com/AlbertUlysses/kanyethewrapper)
+[![codecov](https://codecov.io/gh/AlbertUlysses/kanyethewrapper/branch/master/graph/badge.svg)](https://codecov.io/gh/AlbertUlysses/kanyethewrapper)
+
 # Kanye the Python Wrapper
 This is a wrapper for kanye.rest - a Free REST API for random Kanye West quotes by Andrew Jazbec.
 Thank You [Andrew!](https://github.com/ajzbc)
