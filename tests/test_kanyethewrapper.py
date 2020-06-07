@@ -10,8 +10,11 @@ def example_var():
 
 
 class TestWest(object):
-    def test_west(self):
-        pass
+
+    def test_west(self, example_var):
+        """Tests that we are getting a string and that we can access it"""
+        example_var.west()
+        assert example_var.last_quote is not None
 
 
 class TestBound2(object):
@@ -21,12 +24,14 @@ class TestBound2(object):
         actual = example_var.bound_2(10)
         expected = 'The dictionary can save 10 quotes.'
         assert actual == expected
+        assert example_var.saved == 10
 
     def test_bound_2_smaller_int(self, example_var):
         """Tests that the dictionary can shrink."""
         actual = example_var.bound_2(5)
         expected = 'The dictionary can save 5 quotes.'
         assert actual == expected
+        assert example_var.saved == 5
         for _ in range(5):
             example_var.west()
             example_var.watch_the_throne()
@@ -46,8 +51,22 @@ class TestBound2(object):
 
 class TestWatchTheThrone(object):
 
-    def test_watch_the_throne(self):
-        pass
+    def test_watch_the_throne(self, example_var):
+        """Tests that watch_the_throne is saiving the last quote"""
+        example_var.west()
+        example_var.watch_the_throne()
+        assert example_var.saved_quotes[1] == example_var.last_quote
+
+    def test_watch_the_throne_past_limit(self, example_var):
+        """Test watch_the_throne limit acts correctly."""        
+        for _ in range(5):
+            example_var.west()
+            example_var.watch_the_throne()
+        old_quote = example_var.saved_quotes[1]
+        example_var.west()
+        example_var.watch_the_throne()
+        assert old_quote != example_var.saved_quotes[1]
+
 
 
 class TestHeardEmSay(object):
