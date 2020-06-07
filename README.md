@@ -87,6 +87,4 @@ See below for an example.
 
 ## Current TODO: 
 
-* Look into changing how to save to dictionary, use heapq.
 * Write unit tests.
-* heard_em_say is broken, it returns the same quote for a number of times.
