@@ -16,6 +16,10 @@ class TestWest(object):
         example_var.west()
         assert example_var.last_quote is not None
 
+        first_quote = example_var.last_quote
+        example_var.west()
+        assert first_quote != example_var.last_quote
+
 
 class TestBound2(object):
 
@@ -32,6 +36,7 @@ class TestBound2(object):
         expected = 'The dictionary can save 5 quotes.'
         assert actual == expected
         assert example_var.saved == 5
+
         for _ in range(5):
             example_var.west()
             example_var.watch_the_throne()
@@ -63,16 +68,23 @@ class TestWatchTheThrone(object):
             example_var.west()
             example_var.watch_the_throne()
         old_quote = example_var.saved_quotes[1]
+        second_quote = example_var.saved_quotes[2]
         example_var.west()
         example_var.watch_the_throne()
         assert old_quote != example_var.saved_quotes[1]
+        assert second_quote == example_var.saved_quotes[2]
 
+    def test_watch_the_throne_error(self, example_var):
+        """Tests that without calling west() this method returns an error"""
+        with pytest.raises(Exception) as exception_info:
+            example_var.watch_the_throne()
+        assert exception_info.match('Try calling the API first.')
 
 
 class TestHeardEmSay(object):
 
     def test_heard_em_say(self, example_var):
-        """Tests that without calling west() this method returns an error"""
+        """Tests that the  wacth_the_throne() is called or else an error is given"""
         with pytest.raises(KeyError) as exception_info:
             example_var.heard_em_say()
         assert exception_info.match('The dictionary is empty.')
