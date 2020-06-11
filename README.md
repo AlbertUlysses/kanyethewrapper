@@ -85,6 +85,3 @@ See below for an example.
 
 ```
 
-## Current TODO: 
-
-* Write unit tests.
