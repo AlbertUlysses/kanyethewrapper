@@ -83,8 +83,18 @@ class TestWatchTheThrone(object):
 
 class TestHeardEmSay(object):
 
-    def test_heard_em_say(self, example_var):
+    def test_heard_em_say_error(self, example_var):
         """Tests that the  wacth_the_throne() is called or else an error is given"""
         with pytest.raises(KeyError) as exception_info:
             example_var.heard_em_say()
         assert exception_info.match('The dictionary is empty.')
+    
+    def test_heard_em_say(self, example_var):
+        """Tests heard_em_say"""
+        for _ in range(3):
+            example_var.west()
+            example_var.watch_the_throne()
+        assert example_var.heard_em_say() == example_var.saved_quotes
+        assert len(example_var.saved_quotes.keys()) == 3 
+        assert len(example_var.saved_quotes.values()) == 3
+
