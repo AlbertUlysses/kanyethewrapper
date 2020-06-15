@@ -8,7 +8,7 @@ Thank You [Andrew!](https://github.com/ajzbc)
 * Wraps GET requests found here -> [https://kanye.rest/](https://kanye.rest/)
 
 # Version
-TODO: look into versioning for PIP
+0.1.0 
 
 # Dependencies
 None
