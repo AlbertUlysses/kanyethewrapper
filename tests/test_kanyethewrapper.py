@@ -1,10 +1,10 @@
 import pytest
-from kanyethewrapper.kanyethewrapper import Kanye
+import kanyethewrapper as kw
 
 
 @pytest.fixture
 def example_var():
-    test_var = Kanye()
+    test_var = kw.Kanye()
     yield test_var 
     test_var.saved_quotes = {}
 
