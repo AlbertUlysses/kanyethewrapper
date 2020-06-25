@@ -21,16 +21,6 @@ class Kanye():
         self.saved = new_saved
         return f'The dictionary can save {self.saved} quotes.' 
 
-    def watch_the_throne(self) -> str:
-        """Saves the last quote."""
-        if self.last_quote:
-            if self.quote_counter >= self.saved:
-                self.quote_counter = 0
-            self.saved_quotes[self.quote_counter + 1] = self.last_quote
-            self.quote_counter += 1
-            return 'Quote Saved'
-        raise Exception('Try calling the API first.')
-
     def west(self) -> str:
         """Returns a Kanye West quote."""
         location = 'https://api.kanye.rest'
