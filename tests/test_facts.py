@@ -1,11 +1,13 @@
 import pytest
 import kanyethewrapper as kw
 
+
 @pytest.fixture
 def example_var():
     test_var = kw.Kanye()
     yield test_var
     test_var.saved_quotes = {}
+
 
 class TestWatchTheThrone(object):
     def test_watch_the_throne(self, example_var):
@@ -35,6 +37,7 @@ class TestWatchTheThrone(object):
             example_dict.watch_the_throne(example_var)
         assert exception_info.match('Try calling the API first.')
 
+
 class TestHeardEmSay(object):
 
     def test_heard_em_say_error(self, example_var):
@@ -53,4 +56,41 @@ class TestHeardEmSay(object):
         assert example_dict.heard_em_say() == example_dict.saved_quotes
         assert len(example_dict.saved_quotes.keys()) == 3
         assert len(example_dict.saved_quotes.values()) == 3
+
+
+class TestBound2(object):
+
+    def test_bound_2_larger_int(self, example_var):
+        """Tests that the dictionary can grow larger."""
+        example_dict = kw.Facts()
+        actual = example_dict.bound_2(10)
+        expected = 'The dictionary can save 10 quotes.'
+        assert actual == expected
+        assert example_dict.saved == 10
+
+    def test_bound_2_smaller_int(self, example_var):
+        """Tests that the dictionary can shrink."""
+        example_dict = kw.Facts()
+        actual = example_dict.bound_2(5)
+        expected = 'The dictionary can save 5 quotes.'
+        assert actual == expected
+        assert example_dict.saved == 5
+
+        for _ in range(5):
+            example_var.west()
+            example_dict.watch_the_throne(example_var)
+        first_item = example_dict.saved_quotes[1]
+        third_item = example_dict.saved_quotes[3]
+        example_dict.bound_2(3)
+        assert first_item == example_dict.saved_quotes[1]
+        assert third_item == example_dict.saved_quotes[3]
+        with pytest.raises(KeyError):
+            example_dict.saved_quotes[4]
+
+    def test_bound_2_bad_args(self, example_var):
+        """Tests that bound_2 needs an int"""
+        example_dict = kw.Facts()
+        with pytest.raises(TypeError):
+            example_dict.bound_2()
+
 
