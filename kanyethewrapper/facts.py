@@ -1,5 +1,6 @@
 from .kanyethewrapper import Kanye
 
+
 class Facts():
 
     def __init__(self):
@@ -23,3 +24,12 @@ class Facts():
             return self.saved_quotes 
         raise KeyError('The dictionary is empty.')
 
+    def bound_2(self, new_saved: int) -> str:
+        """Resets the dictionary size for quotes, 
+        drops the quotes that are over the new limit."""
+        if len(self.saved_quotes) > new_saved: 
+            old_dictionary = self.saved_quotes
+            self.saved_quotes = {key: value for key,
+                    value in old_dictionary.items() if key <= new_saved}
+        self.saved = new_saved
+        return f'The dictionary can save {self.saved} quotes.'
