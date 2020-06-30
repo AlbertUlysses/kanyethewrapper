@@ -30,8 +30,9 @@ There is another built in functionality for saving quotes, which you can read in
 
 ### Saving Quotes
 
-If you like a quote and want to access it later, there are two steps you need to take. 
-First you need run the `watch_the_throne()` method. 
+If you like a quote and want to access it later, there are several steps you need to take. 
+First you will need to declare a new class called `Facts`
+Then you need run the `watch_the_throne()` method, with the quote you are saving. 
 This method saves the last quote that the API called. 
 If the `west()` method was not called, then you'll receive an error. 
 To see the saved quote, run the `heard_em_say()` method. 
@@ -44,9 +45,10 @@ Below is an example of this with the Python Interpreter.
 >>> example = Kanye()
 >>> example.west()
 'My greatest pain in life is that I will never be able to see myself perform live.'
->>> example.watch_the_throne()
+>>> example_dict = Facts()
+>>> example_dict.watch_the_throne(example)
 'Quote Saved'
->>> example.heard_em_say()
+>>> example_dict.heard_em_say()
 {1: 'My greatest pain in life is that I will never be able to see myself perform live.'}
 >>> 
 ```
@@ -60,7 +62,7 @@ Below is an example of what it looks like to increase the dictionary size from f
 
 
 ```
->>> example.bound_2(10)
+>>> example_dict.bound_2(10)
 'The dictionary can save 10 quotes.'
 >>> 
 ```  
@@ -69,15 +71,15 @@ If you want to decrease the dictionary size, then the dictionary removes the las
 See below for an example.
 
 ```
->>> example.heard_em_say()
+>>> example_dict.heard_em_say()
 {1: "We all self-conscious. I'm just the first to admit it.", 
 2: 'I want the world to be better! All I want is positive! All I want is dopeness!', 
 3: "Today is the best day ever and tomorrow's going to be even better", 
 4: 'Only free thinkers', 
 5: "Truth is my goal. Controversy is my gym. I'll do a hundred reps of controversy for a 6 pack of truth"}
->>> example.bound_2(3)
+>>> example_dict.bound_2(3)
 'The dictionary can save 3 quotes.'
->>> example.heard_em_say()
+>>> example_dict.heard_em_say()
 {1: "We all self-conscious. I'm just the first to admit it.", 
 2: 'I want the world to be better! All I want is positive! All I want is dopeness!', 
 3: "Today is the best day ever and tomorrow's going to be even better"}
