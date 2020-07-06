@@ -30,6 +30,7 @@ class Facts():
         if len(self.saved_quotes) > new_saved: 
             old_dictionary = self.saved_quotes
             self.saved_quotes = {key: value for key,
-                    value in old_dictionary.items() if key <= new_saved}
+                                 value in old_dictionary.items() 
+                                 if key <= new_saved}
         self.saved = new_saved
         return f'The dictionary can save {self.saved} quotes.'
